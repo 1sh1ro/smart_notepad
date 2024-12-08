@@ -49,8 +49,7 @@ cd smart-notes-extension
 MIT License. 详见 `LICENSE` 文件。
 
 ## 📞 联系 (Contact)
-- 项目主页: [https://github.com/yourusername/smart-notes-extension.git]
-- 问题反馈: [Issues Page]
+- 项目主页: [https://github.com/1sh1ro/smart-notes-extension.git]
 - 邮箱：[2855020996@qq.com]
 ---
 
