@@ -1,0 +1,22 @@
+{
+    "extensionName": {
+        "message": "智能便签",
+        "description": "扩展的名称"
+    },
+    "extensionDescription": {
+        "message": "一个支持语音输入的智能便签工具，帮助您快速记录和管理笔记。支持便签置顶、分类管理、语音输入等功能。",
+        "description": "扩展的详细描述"
+    },
+    "addNoteButton": {
+        "message": "添加便签",
+        "description": "添加新便签的按钮文字"
+    },
+    "voiceInputButton": {
+        "message": "语音输入",
+        "description": "语音输入按钮文字"
+    },
+    "searchPlaceholder": {
+        "message": "搜索便签...",
+        "description": "搜索输入框的占位符"
+    }
+}

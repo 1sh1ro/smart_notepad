@@ -1,0 +1,22 @@
+{
+    "extensionName": {
+        "message": "Smart Notepad",
+        "description": "Extension name"
+    },
+    "extensionDescription": {
+        "message": "A smart notepad tool with voice input, helping you quickly record and manage notes. ",
+        "description": "Detailed extension description"
+    },
+    "addNoteButton": {
+        "message": "Add Note",
+        "description": "Button text for adding a new note"
+    },
+    "voiceInputButton": {
+        "message": "Voice Input",
+        "description": "Voice input button text"
+    },
+    "searchPlaceholder": {
+        "message": "Search notes...",
+        "description": "Placeholder for search input"
+    }
+}

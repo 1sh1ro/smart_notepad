@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="128" height="128" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
+    <!-- Background -->
+    <rect x="16" y="8" width="96" height="112" rx="8" fill="#2196F3"/>
+    
+    <!-- Paper effect -->
+    <rect x="24" y="16" width="80" height="96" rx="4" fill="white"/>
+    
+    <!-- Lines -->
+    <rect x="32" y="32" width="64" height="2" rx="1" fill="#E0E0E0"/>
+    <rect x="32" y="48" width="64" height="2" rx="1" fill="#E0E0E0"/>
+    <rect x="32" y="64" width="64" height="2" rx="1" fill="#E0E0E0"/>
+    <rect x="32" y="80" width="48" height="2" rx="1" fill="#E0E0E0"/>
+    
+    <!-- Microphone icon -->
+    <circle cx="96" cy="96" r="16" fill="#FF4081"/>
+    <path d="M96 88v16M92 96h8" stroke="white" stroke-width="2"/>
+</svg>

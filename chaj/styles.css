@@ -1,0 +1,320 @@
+:root {
+    --primary-color: #2196F3;
+    --background-color: #ffffff;
+    --text-color: #333333;
+    --border-color: #e0e0e0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-width: 300px;
+    background-color: var(--background-color);
+}
+
+.container {
+    width: 400px;  
+    max-height: 600px;
+    margin: 0 auto;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 1.2em;
+}
+
+.controls {
+    display: flex;
+    gap: 10px;
+}
+
+button {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    opacity: 0.9;
+    transform: translateY(-1px);
+    transition: all 0.2s ease;
+}
+
+.input-area {
+    padding: 10px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.input-container {
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    gap: 8px;
+    padding: 12px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+#noteInput {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+#noteCategory {
+    padding: 8px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    background-color: white;
+    font-size: 14px;
+}
+
+#addNote {
+    padding: 8px 16px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+#addNote:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+}
+
+.notes-container {
+    flex: 1;
+    overflow-y: auto;
+    padding: 10px;
+}
+
+#notesList {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.note-item {
+    padding: 12px;
+    border-bottom: 1px solid var(--border-color);
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) 180px; 
+    grid-template-areas: 
+        "category content actions"
+        "category time time";
+    gap: 8px;
+    position: relative;
+    animation: fadeIn 0.3s ease-out;
+}
+
+.note-category {
+    grid-area: category;
+    align-self: center;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    margin-right: 8px;
+}
+
+.note-content {
+    grid-area: content;
+    word-break: break-word;
+    padding-right: 16px; 
+    line-height: 1.4;
+    max-width: 200px; 
+}
+
+.note-actions {
+    grid-area: actions;
+    display: flex;
+    align-items: center;
+    gap: 12px; 
+    white-space: nowrap;
+    min-width: 160px; 
+    justify-content: flex-end;
+    padding-right: 8px;
+}
+
+.note-actions button {
+    padding: 6px 12px; 
+    border: none;
+    background: none;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 40px; 
+    height: 36px; 
+    margin: 0 2px;
+    font-size: 14px;
+}
+
+.note-time {
+    grid-area: time;
+    font-size: 12px;
+    color: #666;
+    margin-top: 4px;
+}
+
+.note-actions .pin-btn {
+    font-size: 16px;
+    opacity: 0.6;
+}
+
+.note-actions .edit-btn,
+.note-actions .delete-btn {
+    font-size: 14px;
+    color: #666;
+}
+
+.note-actions button:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.note-actions .pin-btn:hover {
+    opacity: 1;
+    transform: translateY(-2px);
+}
+
+.note-item[data-pinned="true"] {
+    background-color: rgba(255, 255, 0, 0.05);
+    border-left: 3px solid #ffd700;
+}
+
+.note-item[data-pinned="true"] .pin-btn {
+    opacity: 1;
+    color: #ffd700;
+}
+
+/* 适配小屏幕 */
+@media (max-width: 400px) {
+    .note-item {
+        grid-template-columns: auto 1fr;
+        grid-template-areas: 
+            "category content"
+            "category actions"
+            "category time";
+        padding: 12px 8px;
+    }
+
+    .note-actions {
+        justify-content: flex-start;
+        padding-top: 8px;
+        min-width: 100%;
+    }
+
+    .note-actions button {
+        flex: 1;
+        padding: 4px;
+    }
+}
+
+.status-bar {
+    padding: 5px 10px;
+    background-color: #f5f5f5;
+    border-top: 1px solid var(--border-color);
+    font-size: 12px;
+    color: #666;
+}
+
+.note-count {
+    margin-left: auto;
+    font-size: 12px;
+    color: #666;
+}
+
+.search-bar {
+    padding: 10px;
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    gap: 8px;
+}
+
+#searchInput {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+#categorySelect {
+    padding: 8px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    background-color: white;
+    font-size: 14px;
+}
+
+input:focus, select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(33, 150, 243, 0.1);
+}
+
+.note-item:hover {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transform: translateY(-1px);
+    transition: all 0.2s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-10px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* 悬浮模式样式 */
+.floating {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 300px;
+    background: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    z-index: 10000;
+}
+
+.category-default { background-color: #757575; }
+.category-work { background-color: #2196F3; }
+.category-personal { background-color: #4CAF50; }
+.category-shopping { background-color: #FF9800; }
